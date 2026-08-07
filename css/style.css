@@ -1,0 +1,431 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0b0b0b;
+color:#fff;
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+background:#000;
+border-top:3px solid #e00000;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:10px 40px;
+z-index:1000;
+}
+
+.logo img{
+height:110px;
+object-fit:contain;
+display:block;
+}
+
+nav{
+display:flex;
+align-items:center;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+nav a{
+margin:5px 10px;
+text-decoration:none;
+color:#ccc;
+font-weight:bold;
+font-size:13px;
+}
+
+nav a:hover{
+color:#e00000;
+}
+
+.btn-header{
+background:#e00000;
+padding:8px 14px;
+border-radius:6px;
+color:#fff;
+}
+
+.hero{
+height:100vh;
+background:url('../img/banner-principal.png') center/cover no-repeat;
+display:flex;
+align-items:center;
+padding:140px 60px;
+position:relative;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:linear-gradient(to right,rgba(0,0,0,0.9),rgba(0,0,0,0.2));
+}
+
+.hero-content{
+position:relative;
+max-width:650px;
+}
+
+.hero h1{
+font-size:50px;
+}
+
+.hero span{
+color:#e00000;
+}
+
+.hero p{
+font-size:20px;
+margin-top:15px;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+background:#e00000;
+padding:12px 24px;
+border-radius:6px;
+color:#fff;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#c00000;
+}
+
+.diferenciais{
+background:#111;
+padding:60px 40px;
+}
+
+.diferenciais h2{
+text-align:center;
+color:#e00000;
+margin-bottom:30px;
+font-size:32px;
+}
+
+.diferenciais-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.diferencial-card{
+background:#0b0b0b;
+padding:25px;
+border-radius:8px;
+text-align:center;
+border:1px solid #222;
+}
+
+.diferencial-card i{
+font-size:32px;
+color:#e00000;
+margin-bottom:15px;
+}
+
+.diferencial-card h4{
+margin-bottom:10px;
+font-size:18px;
+}
+
+.diferencial-card p{
+color:#ccc;
+font-size:15px;
+line-height:1.6;
+}
+
+.sobre{
+padding:70px 40px;
+background:#0b0b0b;
+}
+
+.sobre-container{
+max-width:1000px;
+margin:auto;
+}
+
+.sobre h2{
+text-align:center;
+color:#e00000;
+margin-bottom:30px;
+font-size:32px;
+}
+
+.sobre p{
+line-height:1.8;
+margin-bottom:20px;
+color:#ddd;
+font-size:17px;
+}
+
+.sobre .destaque{
+font-size:20px;
+font-weight:bold;
+color:#fff;
+text-align:center;
+margin-top:30px;
+}
+
+.atendemos{
+background:#111;
+padding:60px 40px;
+text-align:center;
+}
+
+.atendemos h2{
+color:#e00000;
+font-size:32px;
+margin-bottom:15px;
+}
+
+.atendemos p{
+color:#ccc;
+margin-bottom:30px;
+font-size:17px;
+}
+
+.atendemos-lista{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.atendemos-lista span{
+background:#0b0b0b;
+border:1px solid #333;
+padding:12px 20px;
+border-radius:30px;
+color:#fff;
+font-weight:bold;
+}
+
+.produtos{
+padding:60px 40px;
+}
+
+.produtos h2{
+text-align:center;
+color:#e00000;
+font-size:32px;
+margin-bottom:30px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:#111;
+border-radius:8px;
+overflow:hidden;
+transition:0.3s;
+border:1px solid #222;
+}
+
+.card:hover{
+transform:translateY(-5px);
+border-color:#e00000;
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.card a{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#e00000;
+padding:12px;
+color:#fff;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
+
+.card a:hover{
+background:#c00000;
+}
+
+.mapa{
+padding:60px 40px;
+background:#0b0b0b;
+text-align:center;
+}
+
+.mapa h2{
+color:#e00000;
+font-size:32px;
+margin-bottom:15px;
+}
+
+.mapa p{
+color:#ccc;
+margin-bottom:25px;
+}
+
+.mapa a{
+display:inline-block;
+background:#e00000;
+color:#fff;
+padding:12px 24px;
+border-radius:6px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.footer{
+background:#000;
+color:#ccc;
+border-top:2px solid #e00000;
+border-bottom:2px solid #e00000;
+padding:40px;
+}
+
+.footer-container{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:30px;
+}
+
+.footer-box{
+flex:1;
+min-width:220px;
+}
+
+.footer h3{
+color:#fff;
+margin-bottom:10px;
+}
+
+.footer p{
+display:flex;
+gap:10px;
+margin:5px 0;
+}
+
+.footer i{
+color:#e00000;
+}
+
+.pagamentos{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.pagamentos img{
+height:25px;
+}
+
+.footer-bottom{
+text-align:center;
+padding:15px;
+color:#aaa;
+font-size:13px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:15px;
+right:15px;
+background:#25d366;
+color:#fff;
+padding:14px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+}
+
+@media(max-width:768px){
+
+header{
+padding:10px 20px;
+justify-content:center;
+text-align:center;
+}
+
+.logo img{
+height:70px;
+margin:auto;
+}
+
+.logo img{
+height:80px;
+margin:auto;
+}
+
+.hero{
+padding:160px 20px;
+text-align:center;
+}
+
+.hero h1{
+font-size:30px;
+}
+
+.hero p{
+font-size:17px;
+}
+
+.diferenciais,
+.sobre,
+.atendemos,
+.produtos,
+.mapa{
+padding:50px 20px;
+}
+
+.sobre h2,
+.diferenciais h2,
+.atendemos h2,
+.produtos h2,
+.mapa h2{
+font-size:28px;
+}
+
+.sobre p{
+font-size:16px;
+text-align:left;
+}
+
+.footer{
+padding:30px 20px;
+text-align:center;
+}
+
+.footer p{
+justify-content:center;
+}
+
+.footer-container{
+flex-direction:column;
+align-items:center;
+}
+
+.pagamentos{
+justify-content:center;
+}
+}
