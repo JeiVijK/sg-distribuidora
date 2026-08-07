@@ -1,71 +1,626 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carnes de Frango</title>
+
+<title>Carnes de Frango - SG Distribuidora Caíca</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-body{margin:0;background:#0b0b0b;color:#fff;font-family:Arial;}
-header{position:fixed;top:0;width:100%;background:#000;border-top:3px solid #e00000;padding:10px;text-align:center;}
-.container{padding:100px 20px;}
-h1{color:#e00000;text-align:center;margin-bottom:30px;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
-.card{background:#111;border-radius:8px;overflow:hidden;text-align:center;}
-.card img{width:100%;height:180px;object-fit:cover;}
-.card h3{margin:10px 0;}
-.btn{display:block;background:#e00000;padding:10px;margin:10px;border-radius:5px;color:#fff;text-decoration:none;}
-.voltar{display:block;text-align:center;margin-top:40px;color:#ccc;text-decoration:none;}
-.whatsapp{position:fixed;bottom:15px;right:15px;background:#25d366;color:#fff;padding:14px;border-radius:50%;font-size:22px;text-decoration:none;}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#0b0b0b;
+color:#fff;
+}
+
+/* CABEÇALHO */
+
+header{
+background:#000;
+border-top:3px solid #e00000;
+padding:15px 40px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo img{
+height:100px;
+object-fit:contain;
+display:block;
+}
+
+nav{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+nav a{
+color:#ccc;
+text-decoration:none;
+font-size:13px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#e00000;
+}
+
+.btn-header{
+background:#e00000;
+padding:10px 16px;
+border-radius:6px;
+color:#fff !important;
+}
+
+/* TÍTULO */
+
+.topo-catalogo{
+background:#111;
+text-align:center;
+padding:55px 20px;
+border-bottom:1px solid #222;
+}
+
+.topo-catalogo i{
+font-size:38px;
+color:#e00000;
+margin-bottom:15px;
+}
+
+.topo-catalogo h1{
+font-size:38px;
+color:#e00000;
+margin-bottom:10px;
+}
+
+.topo-catalogo p{
+color:#ccc;
+font-size:17px;
+}
+
+/* CATÁLOGO */
+
+.catalogo{
+max-width:1400px;
+margin:auto;
+padding:60px 40px;
+}
+
+.catalogo-titulo{
+margin-bottom:30px;
+}
+
+.catalogo-titulo h2{
+font-size:28px;
+margin-bottom:8px;
+}
+
+.catalogo-titulo p{
+color:#aaa;
+}
+
+/* CARDS */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:22px;
+}
+
+.card{
+background:#151515;
+border:1px solid #252525;
+border-radius:8px;
+overflow:hidden;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+border-color:#e00000;
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+background:#222;
+display:block;
+}
+
+.card-conteudo{
+padding:18px;
+}
+
+.card h3{
+font-size:19px;
+margin-bottom:8px;
+}
+
+.card p{
+font-size:14px;
+color:#aaa;
+line-height:1.5;
+margin-bottom:15px;
+}
+
+.consultar{
+display:block;
+background:#e00000;
+color:#fff;
+text-align:center;
+padding:11px;
+border-radius:5px;
+text-decoration:none;
+font-weight:bold;
+font-size:14px;
+}
+
+.consultar:hover{
+background:#b90000;
+}
+
+/* VOLTAR */
+
+.voltar{
+text-align:center;
+margin-top:50px;
+}
+
+.voltar a{
+color:#ccc;
+text-decoration:none;
+font-weight:bold;
+}
+
+.voltar a:hover{
+color:#e00000;
+}
+
+/* RODAPÉ */
+
+footer{
+background:#000;
+border-top:2px solid #e00000;
+padding:35px 40px;
+margin-top:30px;
+}
+
+.footer-container{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:30px;
+}
+
+.footer-box{
+min-width:220px;
+}
+
+.footer-box h3{
+margin-bottom:10px;
+}
+
+.footer-box p{
+color:#ccc;
+margin:6px 0;
+}
+
+.footer-box i{
+color:#e00000;
+margin-right:8px;
+}
+
+.footer-bottom{
+background:#080808;
+text-align:center;
+color:#888;
+font-size:13px;
+padding:15px;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25d366;
+color:#fff;
+width:55px;
+height:55px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:26px;
+text-decoration:none;
+}
+
+/* CELULAR */
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+padding:15px 20px;
+}
+
+.logo img{
+height:75px;
+}
+
+nav{
+margin-top:15px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.topo-catalogo{
+padding:40px 20px;
+}
+
+.topo-catalogo h1{
+font-size:30px;
+}
+
+.catalogo{
+padding:40px 20px;
+}
+
+.grid{
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:15px;
+}
+
+.card img{
+height:140px;
+}
+
+.footer-container{
+flex-direction:column;
+text-align:center;
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
-<header><h2>CARNES DE FRANGO</h2></header>
+<header>
 
-<div class="container">
+<div class="logo">
+<a href="index.html">
+<img src="img/logo.png" alt="SG Distribuidora Caíca">
+</a>
+</div>
+
+<nav>
+
+<a href="index.html">INÍCIO</a>
+<a href="index.html#produtos">CATÁLOGO</a>
+<a href="index.html#sobre">SOBRE NÓS</a>
+<a href="index.html#contato">CONTATO</a>
+
+<a href="https://wa.me/558791253071" target="_blank" class="btn-header">
+FALE CONOSCO
+</a>
+
+</nav>
+
+</header>
+
+
+<section class="topo-catalogo">
+
+<i class="fas fa-drumstick-bite"></i>
+
+<h1>CARNES DE FRANGO</h1>
+
+<p>Conheça nossa linha de cortes e produtos de frango para atacado e varejo.</p>
+
+</section>
+
+
+<main class="catalogo">
+
+<div class="catalogo-titulo">
+
+<h2>Nossos produtos</h2>
+
+<p>Consulte disponibilidade, marcas, pesos e condições diretamente com nossa equipe.</p>
+
+</div>
+
+
 <div class="grid">
 
+<!-- FRANGO INTEIRO -->
 <div class="card">
-<img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791">
-<h3>Peito de Frango</h3>
-<a class="btn" href="https://wa.me/558791253071?text=Quero%20Peito%20de%20Frango">Comprar</a>
+<img src="img/frango/frango-inteiro.jpg" alt="Frango inteiro">
+<div class="card-conteudo">
+<h3>Frango inteiro</h3>
+<p>Versátil e econômico, ideal para assados, frango recheado, cozidos e churrasco.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Frango%20inteiro." target="_blank">
+CONSULTAR
+</a>
+</div>
 </div>
 
+<!-- PEITO DE FRANGO -->
 <div class="card">
-<img src="https://images.unsplash.com/photo-1587593810167-a84920ea0781">
+<img src="img/frango/peito-de-frango.jpg" alt="Peito de frango">
+<div class="card-conteudo">
+<h3>Peito de frango</h3>
+<p>Corte leve e versátil, ótimo para grelhados, assados, estrogonofe e frango desfiado.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Peito%20de%20frango." target="_blank">
+CONSULTAR
+</a>
+</div>
+</div>
+
+<!-- FILÉ DE PEITO -->
+<div class="card">
+<img src="img/frango/file-de-peito.jpg" alt="Filé de peito">
+<div class="card-conteudo">
+<h3>Filé de peito</h3>
+<p>Prático e macio, perfeito para filé grelhado, empanado, à parmegiana e saladas.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Filé%20de%20peito." target="_blank">
+CONSULTAR
+</a>
+</div>
+</div>
+
+<!-- COXA -->
+<div class="card">
+<img src="img/frango/coxa.jpg" alt="Coxa de frango">
+<div class="card-conteudo">
 <h3>Coxa</h3>
-<a class="btn" href="https://wa.me/558791253071?text=Quero%20Coxa">Comprar</a>
+<p>Suculenta e saborosa, ideal para assados, ensopados, frituras e frango ao molho.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Coxa%20de%20frango." target="_blank">
+CONSULTAR
+</a>
+</div>
 </div>
 
+<!-- SOBRECOXA -->
 <div class="card">
-<img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086">
+<img src="img/frango/sobrecoxa.jpg" alt="Sobrecoxa">
+<div class="card-conteudo">
 <h3>Sobrecoxa</h3>
-<a class="btn" href="https://wa.me/558791253071?text=Quero%20Sobrecoxa">Comprar</a>
+<p>Carne macia e suculenta, ótima para forno, churrasqueira, ensopados e molhos.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Sobrecoxa." target="_blank">
+CONSULTAR
+</a>
+</div>
 </div>
 
+<!-- COXA E SOBRECOXA -->
 <div class="card">
-<img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
-<h3>Frango Inteiro</h3>
-<a class="btn" href="https://wa.me/558791253071?text=Quero%20Frango%20Inteiro">Comprar</a>
+<img src="img/frango/coxa-sobrecoxa.jpg" alt="Coxa e sobrecoxa">
+<div class="card-conteudo">
+<h3>Coxa e sobrecoxa</h3>
+<p>Combinação saborosa para assados, frango ao molho, churrasco e refeições completas.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Coxa%20e%20sobrecoxa." target="_blank">
+CONSULTAR
+</a>
+</div>
 </div>
 
+<!-- ASA -->
 <div class="card">
-<img src="https://images.unsplash.com/photo-1606756790138-261d2b21cd45">
+<img src="img/frango/asa.jpg" alt="Asa de frango">
+<div class="card-conteudo">
 <h3>Asa</h3>
-<a class="btn" href="https://wa.me/558791253071?text=Quero%20Asa">Comprar</a>
+<p>Ideal para churrasco, assados, frituras e porções temperadas.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Asa%20de%20frango." target="_blank">
+CONSULTAR
+</a>
 </div>
+</div>
+
+<!-- MEIO DA ASA -->
+<div class="card">
+<img src="img/frango/meio-da-asa.jpg" alt="Meio da asa">
+<div class="card-conteudo">
+<h3>Meio da asa</h3>
+<p>Perfeito para petiscos, churrasco, asas ao molho barbecue e porções crocantes.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Meio%20da%20asa." target="_blank">
+CONSULTAR
+</a>
+</div>
+</div>
+
+<!-- TULIPA -->
+<div class="card">
+<img src="img/frango/tulipa.jpg" alt="Tulipa de frango">
+<div class="card-conteudo">
+<h3>Tulipa</h3>
+<p>Suculenta e prática, ótima para churrasco, frituras, petiscos e tulipa ao molho.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Tulipa%20de%20frango." target="_blank">
+CONSULTAR
+</a>
+</div>
+</div>
+
+<!-- CORAÇÃO -->
+<div class="card">
+<img src="img/frango/coracao.jpg" alt="Coração de frango">
+<div class="card-conteudo">
+<h3>Coração de frango</h3>
+<p>Clássico do churrasco, também excelente em espetinhos, farofas e preparos acebolados.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Coração%20de%20frango." target="_blank">
+CONSULTAR
+</a>
+</div>
+</div>
+
+<!-- MOELA -->
+<div class="card">
+<img src="img/frango/moela.jpg" alt="Moela de frango">
+<div class="card-conteudo">
+<h3>Moela</h3>
+<p>Sabor marcante, ideal para moela ao molho, ensopados, petiscos e pratos caseiros.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Moela%20de%20frango." target="_blank">
+CONSULTAR
+</a>
+</div>
+</div>
+
+<!-- FÍGADO -->
+<div class="card">
+<img src="img/frango/figado-de-frango.jpg" alt="Fígado de frango">
+<div class="card-conteudo">
+<h3>Fígado de frango</h3>
+<p>Opção tradicional para fígado acebolado, patês, refogados e acompanhamentos.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Fígado%20de%20frango." target="_blank">
+CONSULTAR
+</a>
+</div>
+</div>
+
+<!-- PÉ DE FRANGO -->
+<div class="card">
+<img src="img/frango/pe-de-frango.jpg" alt="Pé de frango">
+<div class="card-conteudo">
+<h3>Pé de frango</h3>
+<p>Muito usado em caldos, sopas, cozidos e receitas tradicionais de preparo lento.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Pé%20de%20frango." target="_blank">
+CONSULTAR
+</a>
+</div>
+</div>
+
+<!-- OVOS DE GALINHA -->
+<div class="card">
+<img src="img/frango/ovos-de-galinha.jpg" alt="Ovos de Galinha">
+<div class="card-conteudo">
+<h3>Ovos de Galinha</h3>
+<p>adcionar texto para ovos de galinha</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Fígado%20de%20frango." target="_blank">
+CONSULTAR
+</a>
+</div>
+</div>
+
+<!-- OVOS DE CODORNA -->
+<div class="card">
+<img src="img/frango/ovos-de-codorna.jpg" alt="Ovos de Codorna">
+<div class="card-conteudo">
+<h3>Ovos de Codorna</h3>
+<p>adcionar texto para ovos de galinha</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Fígado%20de%20frango." target="_blank">
+CONSULTAR
+</a>
+</div>
+</div>
+
+<!-- OVOS CAIPIRA -->
+<div class="card">
+<img src="img/frango/ovos-de-caipira.jpg" alt="Ovos Caipira">
+<div class="card-conteudo">
+<h3>Ovos Caipira</h3>
+<p>adcionar texto para ovos de galinha</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Fígado%20de%20frango." target="_blank">
+CONSULTAR
+</a>
+</div>
+</div>
+
 
 </div>
 
-<a href="index.html" class="voltar">← Voltar para o início</a>
+
+<div class="voltar">
+
+<a href="index.html#produtos">
+← Voltar
+
 </div>
 
-<a href="https://wa.me/558791253071" class="whatsapp">
+</main>
+
+
+<footer>
+
+<div class="footer-container">
+
+<div class="footer-box">
+
+<h3>CONTATO</h3>
+
+<p>
+<i class="fas fa-phone"></i>
+Vendas: (87) 9125-3071
+</p>
+
+<p>
+<i class="fas fa-phone"></i>
+Atendimento: (87) 9158-2640
+</p>
+
+<p>
+<i class="fas fa-envelope"></i>
+sgdistribuidoracaica@gmail.com
+</p>
+
+</div>
+
+
+<div class="footer-box">
+
+<h3>ENDEREÇO</h3>
+
+<p>
+<i class="fas fa-map-marker-alt"></i>
+Rua Antônio de Carvalho Leite
+</p>
+
+<p>Araripina - PE</p>
+
+</div>
+
+
+<div class="footer-box">
+
+<h3>EMPRESA</h3>
+
+<p>CNPJ: 37.605.511/0001-47</p>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<div class="footer-bottom">
+© 2026 SG Distribuidora Caíca - Todos os direitos reservados
+</div>
+
+
+<a href="https://wa.me/558791253071"
+target="_blank"
+class="whatsapp">
+
 <i class="fab fa-whatsapp"></i>
+
 </a>
 
 </body>

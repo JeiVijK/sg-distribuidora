@@ -1,170 +1,638 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Frios - SG Distribuidora Caíca</title>
+
+<title>Prontos & Churrasco - SG Distribuidora Caíca</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-body{
+
+*{
 margin:0;
-background:#0b0b0b;
-color:#fff;
+padding:0;
+box-sizing:border-box;
 font-family:Arial, sans-serif;
 }
 
-header{
-position:fixed;
-top:0;
-width:100%;
-background:#000;
-border-top:3px solid #e00000;
-padding:20px;
-text-align:center;
-z-index:1000;
-}
-
-header h2{
-margin:0;
+body{
+background:#0b0b0b;
 color:#fff;
 }
 
-.container{
-padding:120px 40px 60px;
+/* CABEÇALHO */
+
+header{
+background:#000;
+border-top:3px solid #e00000;
+padding:15px 40px;
+display:flex;
+align-items:center;
+justify-content:space-between;
 }
 
-h1{
-color:#e00000;
-text-align:center;
-margin-bottom:10px;
+.logo img{
+height:100px;
+object-fit:contain;
+display:block;
 }
 
-.subtitulo{
-text-align:center;
-color:#ccc;
-margin-bottom:40px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+nav{
+display:flex;
+align-items:center;
 gap:20px;
 }
 
-.card{
+nav a{
+color:#ccc;
+text-decoration:none;
+font-size:13px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#e00000;
+}
+
+.btn-header{
+background:#e00000;
+padding:10px 16px;
+border-radius:6px;
+color:#fff !important;
+}
+
+/* TÍTULO */
+
+.topo-catalogo{
 background:#111;
+text-align:center;
+padding:55px 20px;
+border-bottom:1px solid #222;
+}
+
+.topo-catalogo i{
+font-size:38px;
+color:#e00000;
+margin-bottom:15px;
+}
+
+.topo-catalogo h1{
+font-size:38px;
+color:#e00000;
+margin-bottom:10px;
+}
+
+.topo-catalogo p{
+color:#ccc;
+font-size:17px;
+}
+
+/* CATÁLOGO */
+
+.catalogo{
+max-width:1400px;
+margin:auto;
+padding:60px 40px;
+}
+
+.catalogo-titulo{
+margin-bottom:30px;
+}
+
+.catalogo-titulo h2{
+font-size:28px;
+margin-bottom:8px;
+}
+
+.catalogo-titulo p{
+color:#aaa;
+}
+
+/* CARDS */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:22px;
+}
+
+.card{
+background:#151515;
+border:1px solid #252525;
 border-radius:8px;
 overflow:hidden;
-text-align:center;
-border:1px solid #222;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+border-color:#e00000;
 }
 
 .card img{
 width:100%;
 height:180px;
 object-fit:cover;
+background:#222;
+display:block;
+}
+
+.card-conteudo{
+padding:18px;
 }
 
 .card h3{
-margin:15px 0 5px;
+font-size:19px;
+margin-bottom:8px;
 }
 
 .card p{
-color:#ccc;
 font-size:14px;
-padding:0 15px;
+color:#aaa;
+line-height:1.5;
+margin-bottom:15px;
 }
 
-.btn{
+.consultar{
 display:block;
 background:#e00000;
-padding:12px;
-margin:15px;
-border-radius:5px;
 color:#fff;
+text-align:center;
+padding:11px;
+border-radius:5px;
+text-decoration:none;
+font-weight:bold;
+font-size:14px;
+}
+
+.consultar:hover{
+background:#b90000;
+}
+
+/* VOLTAR */
+
+.voltar{
+text-align:center;
+margin-top:50px;
+}
+
+.voltar a{
+color:#ccc;
 text-decoration:none;
 font-weight:bold;
 }
 
-.voltar{
-display:block;
-text-align:center;
-margin-top:40px;
-color:#ccc;
-text-decoration:none;
+.voltar a:hover{
+color:#e00000;
 }
+
+/* RODAPÉ */
+
+footer{
+background:#000;
+border-top:2px solid #e00000;
+padding:35px 40px;
+margin-top:30px;
+}
+
+.footer-container{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:30px;
+}
+
+.footer-box{
+min-width:220px;
+}
+
+.footer-box h3{
+margin-bottom:10px;
+}
+
+.footer-box p{
+color:#ccc;
+margin:6px 0;
+}
+
+.footer-box i{
+color:#e00000;
+margin-right:8px;
+}
+
+.footer-bottom{
+background:#080808;
+text-align:center;
+color:#888;
+font-size:13px;
+padding:15px;
+}
+
+/* WHATSAPP */
 
 .whatsapp{
 position:fixed;
-bottom:15px;
-right:15px;
+bottom:20px;
+right:20px;
 background:#25d366;
 color:#fff;
-padding:14px;
+width:55px;
+height:55px;
 border-radius:50%;
-font-size:22px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:26px;
 text-decoration:none;
 }
 
+/* CELULAR */
+
 @media(max-width:768px){
-.container{
-padding:110px 20px 40px;
+
+header{
+flex-direction:column;
+padding:15px 20px;
 }
+
+.logo img{
+height:75px;
 }
+
+nav{
+margin-top:15px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.topo-catalogo{
+padding:40px 20px;
+}
+
+.topo-catalogo h1{
+font-size:30px;
+}
+
+.catalogo{
+padding:40px 20px;
+}
+
+.grid{
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:15px;
+}
+
+.card img{
+height:140px;
+}
+
+.footer-container{
+flex-direction:column;
+text-align:center;
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
 <header>
-<h2>SG DISTRIBUIDORA CAÍCA</h2>
+
+<div class="logo">
+<a href="index.html">
+<img src="img/logo.png" alt="SG Distribuidora Caíca">
+</a>
+</div>
+
+<nav>
+
+<a href="index.html">INÍCIO</a>
+<a href="index.html#produtos">CATÁLOGO</a>
+<a href="index.html#sobre">SOBRE NÓS</a>
+<a href="index.html#contato">CONTATO</a>
+
+<a href="https://wa.me/558791253071" target="_blank" class="btn-header">
+FALE CONOSCO
+</a>
+
+</nav>
+
 </header>
 
-<div class="container">
 
-<h1>FRIOS</h1>
-<p class="subtitulo">Produtos frios para supermercados, mercadinhos, lanchonetes e restaurantes.</p>
+<section class="topo-catalogo">
+
+<i class="fas fa-fire"></i>
+
+<h1>PRONTOS & CHURRASCO</h1>
+
+<p>Praticidade, sabor e tudo o que você precisa para refeições rápidas e momentos de churrasco.</p>
+
+</section>
+
+
+<main class="catalogo">
+
+<div class="catalogo-titulo">
+
+<h2>Nossos produtos</h2>
+
+<p>Consulte disponibilidade, marcas, pesos e condições diretamente com nossa equipe.</p>
+
+</div>
+
 
 <div class="grid">
 
+<!-- HAMBÚRGUER -->
 <div class="card">
-<img src="https://images.unsplash.com/photo-1625944230945-1b7dd3b949ab">
-<h3>Queijo Mussarela</h3>
-<p>Produto ideal para lanchonetes, restaurantes e revenda.</p>
-<a class="btn" href="https://wa.me/558791253071?text=Quero%20informações%20sobre%20Queijo%20Mussarela">Consultar</a>
+<img src="img/prontos-churrasco/hamburguer.jpg" alt="Hambúrguer">
+<div class="card-conteudo">
+<h3>Hambúrguer</h3>
+<p>Prático e saboroso, ideal para lanches, sanduíches, combos e refeições rápidas.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Hambúrguer." target="_blank">
+CONSULTAR
+</a>
+</div>
 </div>
 
+<!-- ALMÔNDEGA -->
 <div class="card">
-<img src="https://images.unsplash.com/photo-1604909052743-94e838986d24">
-<h3>Presunto</h3>
-<p>Opção prática para fatiados, sanduíches e consumo comercial.</p>
-<a class="btn" href="https://wa.me/558791253071?text=Quero%20informações%20sobre%20Presunto">Consultar</a>
+<img src="img/prontos-churrasco/almondega.jpg" alt="Almôndega">
+<div class="card-conteudo">
+<h3>Almôndega</h3>
+<p>Versátil e prática, ótima para massas, molhos, refeições prontas e porções.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Almôndega." target="_blank">
+CONSULTAR
+</a>
+</div>
 </div>
 
+<!-- NUGGETS -->
 <div class="card">
-<img src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9">
-<h3>Apresuntado</h3>
-<p>Produto versátil para comércios, padarias e lanchonetes.</p>
-<a class="btn" href="https://wa.me/558791253071?text=Quero%20informações%20sobre%20Apresuntado">Consultar</a>
+<img src="img/prontos-churrasco/nuggets.jpg" alt="Nuggets">
+<div class="card-conteudo">
+<h3>Nuggets</h3>
+<p>Crocantes e práticos, ideais para lanches, porções, refeições infantis e acompanhamentos.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Nuggets." target="_blank">
+CONSULTAR
+</a>
+</div>
 </div>
 
+<!-- EMPANADOS -->
 <div class="card">
-<img src="https://images.unsplash.com/photo-1606851091851-e8c8c0fca5ba">
-<h3>Mortadela</h3>
-<p>Produto tradicional para revenda e preparo de lanches.</p>
-<a class="btn" href="https://wa.me/558791253071?text=Quero%20informações%20sobre%20Mortadela">Consultar</a>
+<img src="img/prontos-churrasco/empanados.jpg" alt="Empanados">
+<div class="card-conteudo">
+<h3>Empanados</h3>
+<p>Práticos para fritura ou forno, ótimos em lanches, refeições e porções rápidas.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Empanados." target="_blank">
+CONSULTAR
+</a>
+</div>
+</div>
+
+<!-- BATATA FRITA CONGELADA -->
+<div class="card">
+<img src="img/prontos-churrasco/batata-frita.jpg" alt="Batata frita congelada">
+<div class="card-conteudo">
+<h3>Batata frita congelada</h3>
+<p>Acompanhamento clássico para hambúrgueres, porções, carnes, lanches e refeições.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Batata%20frita%20congelada." target="_blank">
+CONSULTAR
+</a>
+</div>
+</div>
+
+<!-- PÃO DE QUEIJO -->
+<div class="card">
+<img src="img/prontos-churrasco/pao-de-queijo.jpg" alt="Pão de queijo">
+<div class="card-conteudo">
+<h3>Pão de queijo</h3>
+<p>Ideal para cafés, lanches, padarias, recepções e refeições rápidas.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Pão%20de%20queijo." target="_blank">
+CONSULTAR
+</a>
+</div>
+</div>
+
+<!-- LASANHA CONGELADA -->
+<div class="card">
+<img src="img/prontos-churrasco/lasanha.jpg" alt="Lasanha congelada">
+<div class="card-conteudo">
+<h3>Lasanha congelada</h3>
+<p>Refeição prática e completa, ideal para almoço, jantar e preparo rápido.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Lasanha%20congelada." target="_blank">
+CONSULTAR
+</a>
+</div>
+</div>
+
+<!-- PIZZA CONGELADA -->
+<div class="card">
+<img src="img/prontos-churrasco/pizza.jpg" alt="Pizza congelada">
+<div class="card-conteudo">
+<h3>Pizza congelada</h3>
+<p>Prática para lanches e refeições rápidas, ideal para forno e preparo em poucos minutos.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Pizza%20congelada." target="_blank">
+CONSULTAR
+</a>
+</div>
+</div>
+
+<!-- PÃO DE ALHO -->
+<div class="card">
+<img src="img/prontos-churrasco/pao-de-alho.jpg" alt="Pão de alho">
+<div class="card-conteudo">
+<h3>Pão de alho</h3>
+<p>Clássico do churrasco, ótimo como entrada, acompanhamento e petisco na brasa.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Pão%20de%20alho." target="_blank">
+CONSULTAR
+</a>
+</div>
+</div>
+
+<!-- QUEIJO COALHO NO ESPETO -->
+<div class="card">
+<img src="img/prontos-churrasco/queijo-coalho.jpg" alt="Queijo coalho no espeto">
+<div class="card-conteudo">
+<h3>Queijo coalho no espeto</h3>
+<p>Perfeito para churrasco, grelha e petiscos, com preparo rápido direto na brasa.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Queijo%20coalho%20no%20espeto." target="_blank">
+CONSULTAR
+</a>
+</div>
+</div>
+
+<!-- FAROFA PRONTA -->
+<div class="card">
+<img src="img/prontos-churrasco/farofa.jpg" alt="Farofa pronta">
+<div class="card-conteudo">
+<h3>Farofa pronta</h3>
+<p>Acompanhamento tradicional para churrasco, feijoada, assados e refeições brasileiras.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Farofa%20pronta." target="_blank">
+CONSULTAR
+</a>
+</div>
+</div>
+
+<!-- MOLHO BARBECUE -->
+<div class="card">
+<img src="img/prontos-churrasco/molho-barbecue.jpg" alt="Molho barbecue">
+<div class="card-conteudo">
+<h3>Molho barbecue</h3>
+<p>Sabor marcante para costelas, hambúrgueres, carnes grelhadas, asas e petiscos.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Molho%20barbecue." target="_blank">
+CONSULTAR
+</a>
+</div>
+</div>
+
+<!-- MOLHO DE ALHO -->
+<div class="card">
+<img src="img/prontos-churrasco/molho-de-alho.jpg" alt="Molho de alho">
+<div class="card-conteudo">
+<h3>Molho de alho</h3>
+<p>Ótimo para churrasco, sanduíches, carnes, batatas e petiscos variados.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Molho%20de%20alho." target="_blank">
+CONSULTAR
+</a>
+</div>
+</div>
+
+<!-- CHIMICHURRI -->
+<div class="card">
+<img src="img/prontos-churrasco/chimichurri.jpg" alt="Chimichurri">
+<div class="card-conteudo">
+<h3>Chimichurri</h3>
+<p>Tempero aromático para carnes, churrasco, marinadas, molhos e grelhados.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Chimichurri." target="_blank">
+CONSULTAR
+</a>
+</div>
+</div>
+
+<!-- SAL GROSSO -->
+<div class="card">
+<img src="img/prontos-churrasco/sal-grosso.jpg" alt="Sal grosso">
+<div class="card-conteudo">
+<h3>Sal grosso</h3>
+<p>Essencial para o churrasco, ideal para temperar carnes bovinas, suínas e aves.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Sal%20grosso." target="_blank">
+CONSULTAR
+</a>
+</div>
+</div>
+
+<!-- CARVÃO -->
+<div class="card">
+<img src="img/prontos-churrasco/carvao.jpg" alt="Carvão">
+<div class="card-conteudo">
+<h3>Carvão</h3>
+<p>Indispensável para churrasqueira, garantindo calor e brasa para o preparo das carnes.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Carvão." target="_blank">
+CONSULTAR
+</a>
+</div>
+</div>
+
+<!-- ACENDEDOR -->
+<div class="card">
+<img src="img/prontos-churrasco/acendedor.jpg" alt="Acendedor">
+<div class="card-conteudo">
+<h3>Acendedor</h3>
+<p>Facilita o início da churrasqueira, tornando o preparo da brasa mais rápido e prático.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Acendedor." target="_blank">
+CONSULTAR
+</a>
+</div>
 </div>
 
 </div>
 
-<a href="index.html" class="voltar">← Voltar para o início</a>
+
+<div class="voltar">
+
+<a href="index.html#produtos">
+← Voltar
+</a>
 
 </div>
 
-<a href="https://wa.me/558791253071" class="whatsapp">
+</main>
+
+
+<footer>
+
+<div class="footer-container">
+
+<div class="footer-box">
+
+<h3>CONTATO</h3>
+
+<p>
+<i class="fas fa-phone"></i>
+Vendas: (87) 9125-3071
+</p>
+
+<p>
+<i class="fas fa-phone"></i>
+Atendimento: (87) 9158-2640
+</p>
+
+<p>
+<i class="fas fa-envelope"></i>
+sgdistribuidoracaica@gmail.com
+</p>
+
+</div>
+
+
+<div class="footer-box">
+
+<h3>ENDEREÇO</h3>
+
+<p>
+<i class="fas fa-map-marker-alt"></i>
+Rua Antônio de Carvalho Leite
+</p>
+
+<p>Araripina - PE</p>
+
+</div>
+
+
+<div class="footer-box">
+
+<h3>EMPRESA</h3>
+
+<p>CNPJ: 37.605.511/0001-47</p>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<div class="footer-bottom">
+© 2026 SG Distribuidora Caíca - Todos os direitos reservados
+</div>
+
+
+<a href="https://wa.me/558791253071"
+target="_blank"
+class="whatsapp">
+
 <i class="fab fa-whatsapp"></i>
+
 </a>
 
 </body>

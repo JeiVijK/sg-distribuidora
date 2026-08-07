@@ -1,106 +1,632 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carnes Bovinas</title>
+
+<title>Carnes Bovinas - SG Distribuidora Caíca</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-body{margin:0;background:#0b0b0b;color:#fff;font-family:Arial;}
-header{position:fixed;top:0;width:100%;background:#000;border-top:3px solid #e00000;padding:10px;text-align:center;}
-.container{padding:100px 20px;}
-h1{color:#e00000;text-align:center;margin-bottom:30px;}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
-
-.card{background:#111;border-radius:8px;overflow:hidden;text-align:center;}
-.card img{width:100%;height:180px;object-fit:cover;}
-.card h3{margin:10px 0;}
-
-.btn{
-display:block;
-background:#e00000;
-padding:10px;
-margin:10px;
-border-radius:5px;
-color:#fff;
-text-decoration:none;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
 }
 
-.voltar{
+body{
+background:#0b0b0b;
+color:#fff;
+}
+
+/* CABEÇALHO */
+
+header{
+background:#000;
+border-top:3px solid #e00000;
+padding:15px 40px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo img{
+height:100px;
+object-fit:contain;
 display:block;
-text-align:center;
-margin-top:40px;
+}
+
+nav{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+nav a{
 color:#ccc;
 text-decoration:none;
+font-size:13px;
+font-weight:bold;
 }
+
+nav a:hover{
+color:#e00000;
+}
+
+.btn-header{
+background:#e00000;
+padding:10px 16px;
+border-radius:6px;
+color:#fff !important;
+}
+
+/* TÍTULO */
+
+.topo-catalogo{
+background:#111;
+text-align:center;
+padding:55px 20px;
+border-bottom:1px solid #222;
+}
+
+.topo-catalogo i{
+font-size:38px;
+color:#e00000;
+margin-bottom:15px;
+}
+
+.topo-catalogo h1{
+font-size:38px;
+color:#e00000;
+margin-bottom:10px;
+}
+
+.topo-catalogo p{
+color:#ccc;
+font-size:17px;
+}
+
+/* CATÁLOGO */
+
+.catalogo{
+max-width:1400px;
+margin:auto;
+padding:60px 40px;
+}
+
+.catalogo-titulo{
+margin-bottom:30px;
+}
+
+.catalogo-titulo h2{
+font-size:28px;
+margin-bottom:8px;
+}
+
+.catalogo-titulo p{
+color:#aaa;
+}
+
+/* CARDS */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:22px;
+}
+
+.card{
+background:#151515;
+border:1px solid #252525;
+border-radius:8px;
+overflow:hidden;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+border-color:#e00000;
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+background:#222;
+display:block;
+}
+
+.card-conteudo{
+padding:18px;
+}
+
+.card h3{
+font-size:19px;
+margin-bottom:8px;
+}
+
+.card p{
+font-size:14px;
+color:#aaa;
+line-height:1.5;
+margin-bottom:15px;
+}
+
+.consultar{
+display:block;
+background:#e00000;
+color:#fff;
+text-align:center;
+padding:11px;
+border-radius:5px;
+text-decoration:none;
+font-weight:bold;
+font-size:14px;
+}
+
+.consultar:hover{
+background:#b90000;
+}
+
+/* VOLTAR */
+
+.voltar{
+text-align:center;
+margin-top:50px;
+}
+
+.voltar a{
+color:#ccc;
+text-decoration:none;
+font-weight:bold;
+}
+
+.voltar a:hover{
+color:#e00000;
+}
+
+/* RODAPÉ */
+
+footer{
+background:#000;
+border-top:2px solid #e00000;
+padding:35px 40px;
+margin-top:30px;
+}
+
+.footer-container{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:30px;
+}
+
+.footer-box{
+min-width:220px;
+}
+
+.footer-box h3{
+margin-bottom:10px;
+}
+
+.footer-box p{
+color:#ccc;
+margin:6px 0;
+}
+
+.footer-box i{
+color:#e00000;
+margin-right:8px;
+}
+
+.footer-bottom{
+background:#080808;
+text-align:center;
+color:#888;
+font-size:13px;
+padding:15px;
+}
+
+/* WHATSAPP */
 
 .whatsapp{
 position:fixed;
-bottom:15px;
-right:15px;
+bottom:20px;
+right:20px;
 background:#25d366;
 color:#fff;
-padding:14px;
+width:55px;
+height:55px;
 border-radius:50%;
-font-size:22px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:26px;
 text-decoration:none;
 }
+
+/* CELULAR */
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+padding:15px 20px;
+}
+
+.logo img{
+height:75px;
+}
+
+nav{
+margin-top:15px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.topo-catalogo{
+padding:40px 20px;
+}
+
+.topo-catalogo h1{
+font-size:30px;
+}
+
+.catalogo{
+padding:40px 20px;
+}
+
+.grid{
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:15px;
+}
+
+.card img{
+height:140px;
+}
+
+.footer-container{
+flex-direction:column;
+text-align:center;
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
-<header><h2>CARNES BOVINAS</h2></header>
+<header>
 
-<div class="container">
+<div class="logo">
+<a href="index.html">
+<img src="img/logo.png" alt="SG Distribuidora Caíca">
+</a>
+</div>
+
+<nav>
+
+<a href="index.html">INÍCIO</a>
+<a href="index.html#produtos">CATÁLOGO</a>
+<a href="index.html#sobre">SOBRE NÓS</a>
+<a href="index.html#contato">CONTATO</a>
+
+<a href="https://wa.me/558791253071" target="_blank" class="btn-header">
+FALE CONOSCO
+</a>
+
+</nav>
+
+</header>
+
+
+<section class="topo-catalogo">
+
+<i class="fas fa-cow"></i>
+
+<h1>CARNES BOVINAS</h1>
+
+<p>Conheça nossa linha de cortes bovinos para atacado e varejo.</p>
+
+</section>
+
+
+<main class="catalogo">
+
+<div class="catalogo-titulo">
+
+<h2>Nossos cortes</h2>
+
+<p>Consulte disponibilidade, marcas, pesos e condições diretamente com nossa equipe.</p>
+
+</div>
+
+
 <div class="grid">
 
+<!-- PICANHA -->
 <div class="card">
-<img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
+<img src="img/bovinos/picanha.jpg" alt="Picanha">
+<div class="card-conteudo">
 <h3>Picanha</h3>
-<a class="btn" href="https://wa.me/558791253071?text=Quero%20Picanha">Comprar</a>
+<p>Ideal para churrasco, grelha e cortes especiais.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Picanha." target="_blank">CONSULTAR</a>
+</div>
 </div>
 
+<!-- CONTRAFILÉ -->
 <div class="card">
-<img src="https://images.unsplash.com/photo-1558030006-450675393462">
-<h3>Alcatra</h3>
-<a class="btn" href="https://wa.me/558791253071?text=Quero%20Alcatra">Comprar</a>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1603048297172-c92544798d5a">
+<img src="img/bovinos/contrafile.jpg" alt="Contrafilé">
+<div class="card-conteudo">
 <h3>Contrafilé</h3>
-<a class="btn" href="https://wa.me/558791253071?text=Quero%20Contrafilé">Comprar</a>
+<p>Ótimo para bifes, grelhados e churrasco.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Contrafilé." target="_blank">CONSULTAR</a>
+</div>
 </div>
 
+<!-- ALCATRA -->
 <div class="card">
-<img src="https://images.unsplash.com/photo-1544025162-d76694265947">
-<h3>Costela</h3>
-<a class="btn" href="https://wa.me/558791253071?text=Quero%20Costela">Comprar</a>
+<img src="img/bovinos/alcatra.jpg" alt="Alcatra">
+<div class="card-conteudo">
+<h3>Alcatra</h3>
+<p>Versátil para bifes, assados e churrasco.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Alcatra." target="_blank">CONSULTAR</a>
+</div>
 </div>
 
+<!-- MAMINHA -->
 <div class="card">
-<img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d">
-<h3>Patinho</h3>
-<a class="btn" href="https://wa.me/558791253071?text=Quero%20Patinho">Comprar</a>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f">
+<img src="img/bovinos/maminha.jpg" alt="Maminha">
+<div class="card-conteudo">
 <h3>Maminha</h3>
-<a class="btn" href="https://wa.me/558791253071?text=Quero%20Maminha">Comprar</a>
+<p>Excelente para assados, grelha e churrasco.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Maminha." target="_blank">CONSULTAR</a>
+</div>
+</div>
+
+<!-- COSTELA BOVINA -->
+<div class="card">
+<img src="img/bovinos/costela-bovina.jpg" alt="Costela bovina">
+<div class="card-conteudo">
+<h3>Costela bovina</h3>
+<p>Ideal para assados lentos, churrasco e cozidos.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Costela%20bovina." target="_blank">CONSULTAR</a>
+</div>
+</div>
+
+<!-- ACÉM -->
+<div class="card">
+<img src="img/bovinos/acem.jpg" alt="Acém">
+<div class="card-conteudo">
+<h3>Acém</h3>
+<p>Muito usado em cozidos, ensopados e carne de panela.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Acém." target="_blank">CONSULTAR</a>
+</div>
+</div>
+
+<!-- PALETA -->
+<div class="card">
+<img src="img/bovinos/paleta.jpg" alt="Paleta">
+<div class="card-conteudo">
+<h3>Paleta</h3>
+<p>Boa opção para panela, ensopados e carne desfiada.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Paleta." target="_blank">CONSULTAR</a>
+</div>
+</div>
+
+<!-- COXÃO MOLE -->
+<div class="card">
+<img src="img/bovinos/coxao-mole.jpg" alt="Coxão mole">
+<div class="card-conteudo">
+<h3>Coxão mole</h3>
+<p>Indicado para bifes, rolês e assados.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Coxão%20mole." target="_blank">CONSULTAR</a>
+</div>
+</div>
+
+<!-- COXÃO DURO -->
+<div class="card">
+<img src="img/bovinos/coxao-duro.jpg" alt="Coxão duro">
+<div class="card-conteudo">
+<h3>Coxão duro</h3>
+<p>Ideal para panela, assados e carnes recheadas.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Coxão%20duro." target="_blank">CONSULTAR</a>
+</div>
+</div>
+
+<!-- PATINHO -->
+<div class="card">
+<img src="img/bovinos/patinho.jpg" alt="Patinho">
+<div class="card-conteudo">
+<h3>Patinho</h3>
+<p>Ótimo para bifes, carne moída e estrogonofe.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Patinho." target="_blank">CONSULTAR</a>
+</div>
+</div>
+
+<!-- LAGARTO -->
+<div class="card">
+<img src="img/bovinos/lagarto.jpg" alt="Lagarto">
+<div class="card-conteudo">
+<h3>Lagarto</h3>
+<p>Excelente para assados, rosbife e carne recheada.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Lagarto." target="_blank">CONSULTAR</a>
+</div>
+</div>
+
+<!-- FRALDINHA -->
+<div class="card">
+<img src="img/bovinos/fraldinha.jpg" alt="Fraldinha">
+<div class="card-conteudo">
+<h3>Fraldinha</h3>
+<p>Ideal para churrasco, grelha e assados.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Fraldinha." target="_blank">CONSULTAR</a>
+</div>
+</div>
+
+<!-- CUPIM -->
+<div class="card">
+<img src="img/bovinos/cupim.jpg" alt="Cupim">
+<div class="card-conteudo">
+<h3>Cupim</h3>
+<p>Perfeito para churrasco e assados de longa duração.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Cupim." target="_blank">CONSULTAR</a>
+</div>
+</div>
+
+<!-- MÚSCULO -->
+<div class="card">
+<img src="img/bovinos/musculo.jpg" alt="Músculo">
+<div class="card-conteudo">
+<h3>Músculo</h3>
+<p>Excelente para sopas, caldos e carne de panela.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Músculo." target="_blank">CONSULTAR</a>
+</div>
+</div>
+
+<!-- FILÉ MIGNON -->
+<div class="card">
+<img src="img/bovinos/file-mignon.jpg" alt="Filé mignon">
+<div class="card-conteudo">
+<h3>Filé mignon</h3>
+<p>Ideal para medalhões, estrogonofe e grelhados.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Filé%20mignon." target="_blank">CONSULTAR</a>
+</div>
+</div>
+
+<!-- CARNE MOÍDA -->
+<div class="card">
+<img src="img/bovinos/carne-moida.jpg" alt="Carne moída">
+<div class="card-conteudo">
+<h3>Carne moída</h3>
+<p>Perfeita para molhos, almôndegas e recheios.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Carne%20moída." target="_blank">CONSULTAR</a>
+</div>
+</div>
+
+<!-- HAMBÚRGUER BOVINO -->
+<div class="card">
+<img src="img/bovinos/hamburguer-bovino.jpg" alt="Hambúrguer bovino">
+<div class="card-conteudo">
+<h3>Hambúrguer bovino</h3>
+<p>Prático para lanches, sanduíches e porções.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Hambúrguer%20bovino." target="_blank">CONSULTAR</a>
+</div>
+</div>
+
+<!-- COSTELA MINGA -->
+<div class="card">
+<img src="img/bovinos/costela-minga.jpg" alt="Costela minga">
+<div class="card-conteudo">
+<h3>Costela minga</h3>
+<p>Ideal para churrasco, assados e cozimento lento.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Costela%20minga." target="_blank">CONSULTAR</a>
+</div>
+</div>
+
+<!-- ISCA DE PICANHA -->
+<div class="card">
+<img src="img/bovinos/isca-picanha.jpg" alt="Isca de picanha">
+<div class="card-conteudo">
+<h3>Isca de picanha</h3>
+<p>Ótima para porções, petiscos e grelhados rápidos.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Isca%20de%20picanha." target="_blank">CONSULTAR</a>
+</div>
+</div>
+
+<!-- CAPA DE FILÉ -->
+<div class="card">
+<img src="img/bovinos/capa-de-file.jpg" alt="Capa de filé">
+<div class="card-conteudo">
+<h3>Capa de filé</h3>
+<p>Boa para panela, assados e preparo na pressão.</p>
+<a class="consultar" href="https://wa.me/558791253071?text=Olá,%20gostaria%20de%20informações%20sobre%20Capa%20de%20filé." target="_blank">CONSULTAR</a>
+</div>
 </div>
 
 </div>
 
-<a href="index.html" class="voltar">← Voltar para o início</a>
+
+<div class="voltar">
+
+<a href="index.html#produtos">
+← Voltar
+</a>
+
 </div>
 
-<a href="https://wa.me/558791253071" class="whatsapp">
+</main>
+
+
+<footer>
+
+<div class="footer-container">
+
+<div class="footer-box">
+
+<h3>CONTATO</h3>
+
+<p>
+<i class="fas fa-phone"></i>
+Vendas: (87) 9125-3071
+</p>
+
+<p>
+<i class="fas fa-phone"></i>
+Atendimento: (87) 9158-2640
+</p>
+
+<p>
+<i class="fas fa-envelope"></i>
+sgdistribuidoracaica@gmail.com
+</p>
+
+</div>
+
+<div class="footer-box">
+
+<h3>ENDEREÇO</h3>
+
+<p>
+<i class="fas fa-map-marker-alt"></i>
+Rua Antônio de Carvalho Leite
+</p>
+
+<p>Araripina - PE</p>
+
+</div>
+
+<div class="footer-box">
+
+<h3>EMPRESA</h3>
+
+<p>CNPJ: 37.605.511/0001-47</p>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<div class="footer-bottom">
+© 2026 SG Distribuidora Caíca - Todos os direitos reservados
+</div>
+
+
+<a href="https://wa.me/558791253071"
+target="_blank"
+class="whatsapp">
+
 <i class="fab fa-whatsapp"></i>
+
 </a>
 
 </body>
